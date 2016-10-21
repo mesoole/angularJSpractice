@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
     <h1>{{title}}</h1>
     <h2>My products</h2>
     <ul class="products">
-      <li *ngFor="let product of products" (click)="onSelect(product)">
+      <li *ngFor="let product of products" (click)="onSelect(product)"
+      [class.selected]="product === selectedProduct">
         <span class="badge">{{product.id}}</span> {{product.name}}
       </li>
     </ul>
