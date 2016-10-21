@@ -2,12 +2,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <h2>My Products</h2>
-    <ul class="Products">
-      <li *ngFor="let Product of Products">
-        <span class="badge">{{Product.id}}</span> {{Product.name}}
+    <h1>{{title}}</h1>
+    <h2>My products</h2>
+    <ul class="products">
+      <li *ngFor="let product of products" (click)="onSelect(product)">
+        <span class="badge">{{product.id}}</span> {{product.name}}
       </li>
     </ul>
+    <div *ngIf="selectedProduct">
+      <h2>{{selectedProduct.name}} details!</h2>
+      <div><label>id: </label>{{selectedProduct.id}}</div>
+    <div>
+    <label>name: </label>
+    <input [(ngModel)]="selectedProduct.name" placeholder="name"/>
+    </div>
   `,
   styles: [`
   .selected {
@@ -66,23 +74,27 @@ export class AppComponent {
   //   id: 1,
   //   name: 'Product1'
   // };
-  Products: Product[] = [
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
-  ];
+  products = PRODUCTS;
 
-
+  selectedProduct: Product;
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+  }
 }
 export class Product {
   constructor(
     public id: number,
     public name: string) { }
 }
+const PRODUCTS: Product[] = [
+  { id: 11, name: 'Mr. Nice' },
+  { id: 12, name: 'Narco' },
+  { id: 13, name: 'Bombasto' },
+  { id: 14, name: 'Celeritas' },
+  { id: 15, name: 'Magneta' },
+  { id: 16, name: 'RubberMan' },
+  { id: 17, name: 'Dynama' },
+  { id: 18, name: 'Dr IQ' },
+  { id: 19, name: 'Magma' },
+  { id: 20, name: 'Tornado' }
+];
