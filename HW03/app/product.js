@@ -1,6 +1,8 @@
 "use strict";
 var Product = (function () {
-    function Product() {
+    function Product(id, name) {
+        this.id = id;
+        this.name = name;
     }
     return Product;
 }());

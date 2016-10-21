@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var app_component_1 = require('./app.component');
-var product_detail_component_1 = require('./product-detail.component');
-var AppModule = (function () {
-    function AppModule() {
+var ProductDetailComponent = (function () {
+    function ProductDetailComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, product_detail_component_1.ProductDetailComponent],
-            bootstrap: [app_component_1.AppComponent]
+    ProductDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'my-product-detail',
+            template: "\n        <div *ngIf=\"hero\">\n            <h2>{{hero.name}} details!</h2>\n            <div><label>id: </label>{{hero.id}}</div>\n            <div>\n            <label>name: </label>\n            <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n            </div>\n        </div>\n        "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ProductDetailComponent);
+    return ProductDetailComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ProductDetailComponent = ProductDetailComponent;
+//# sourceMappingURL=product-detail.component.js.map

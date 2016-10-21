@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product';
 @Component({
   selector: 'my-app',
   template: `
@@ -10,13 +11,8 @@ import { Component } from '@angular/core';
         <span class="badge">{{product.id}}</span> {{product.name}}
       </li>
     </ul>
-    <div *ngIf="selectedProduct">
-      <h2>{{selectedProduct.name}} details!</h2>
-      <div><label>id: </label>{{selectedProduct.id}}</div>
-    <div>
-    <label>name: </label>
-    <input [(ngModel)]="selectedProduct.name" placeholder="name"/>
-    </div>
+    <my-product-detail ></my-product-detail>
+    <my-product-detail [product]="selectedProduct"></my-product-detail>
   `,
   styles: [`
   .selected {
@@ -81,11 +77,6 @@ export class AppComponent {
   onSelect(product: Product): void {
     this.selectedProduct = product;
   }
-}
-export class Product {
-  constructor(
-    public id: number,
-    public name: string) { }
 }
 const PRODUCTS: Product[] = [
   { id: 11, name: 'Mr. Nice' },
