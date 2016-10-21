@@ -14,13 +14,13 @@ import { Component } from '@angular/core';
     background-color: #CFD8DC !important;
     color: white;
   }
-  .heroes {
+  .Products {
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
     width: 15em;
   }
-  .heroes li {
+  .Products li {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -30,20 +30,20 @@ import { Component } from '@angular/core';
     height: 1.6em;
     border-radius: 4px;
   }
-  .heroes li.selected:hover {
+  .Products li.selected:hover {
     background-color: #BBD8DC !important;
     color: white;
   }
-  .heroes li:hover {
+  .Products li:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
   }
-  .heroes .text {
+  .Products .text {
     position: relative;
     top: -3px;
   }
-  .heroes .badge {
+  .Products .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -62,10 +62,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Tour of Products';
   // product = 'product1';
-  hero: Product = {
-    id: 1,
-    name: 'Product1'
-  };
+  // product: Product = {
+  //   id: 1,
+  //   name: 'Product1'
+  // };
   Products: Product[] = [
     { id: 11, name: 'Mr. Nice' },
     { id: 12, name: 'Narco' },
