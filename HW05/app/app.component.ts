@@ -12,3 +12,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 }
+
+//Navigate to Hero Details

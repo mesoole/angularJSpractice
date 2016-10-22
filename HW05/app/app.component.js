@@ -22,4 +22,5 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+//Navigate to Hero Details 
 //# sourceMappingURL=app.component.js.map
