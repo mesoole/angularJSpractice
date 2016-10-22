@@ -13,14 +13,38 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var product_detail_component_1 = require('./product-detail.component');
+var products_component_1 = require('./products.component');
+var product_service_1 = require('./product.service');
+var router_1 = require('@angular/router');
+var dashboard_component_1 = require('./dashboard.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, product_detail_component_1.ProductDetailComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([{
+                        path: 'products',
+                        component: products_component_1.ProductsComponent,
+                    },
+                    {
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
+                    },
+                    {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    }])],
+            declarations: [
+                app_component_1.AppComponent,
+                product_detail_component_1.ProductDetailComponent,
+                products_component_1.ProductsComponent,
+                dashboard_component_1.DashboardComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [product_service_1.ProductService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
