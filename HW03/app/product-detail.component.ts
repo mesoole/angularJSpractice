@@ -4,16 +4,17 @@ import { Product } from './product';
 @Component({
     selector: 'my-product-detail',
     template: `
-        <div *ngIf="hero">
-            <h2>{{hero.name}} details!</h2>
-            <div><label>id: </label>{{hero.id}}</div>
+        <div *ngIf="product">
+            <h2>{{product.name}} details!</h2>
+            <div><label>id: </label>{{product.id}}</div>
             <div>
             <label>name: </label>
-            <input [(ngModel)]="hero.name" placeholder="name"/>
+            <input [(ngModel)]="product.name" placeholder="name"/>
             </div>
         </div>
         `
 })
 export class ProductDetailComponent {
-    
+    @Input()
+    product: Product;
 }

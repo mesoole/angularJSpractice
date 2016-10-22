@@ -9,13 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var product_1 = require('./product');
 var ProductDetailComponent = (function () {
     function ProductDetailComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', product_1.Product)
+    ], ProductDetailComponent.prototype, "product", void 0);
     ProductDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-product-detail',
-            template: "\n        <div *ngIf=\"hero\">\n            <h2>{{hero.name}} details!</h2>\n            <div><label>id: </label>{{hero.id}}</div>\n            <div>\n            <label>name: </label>\n            <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n            </div>\n        </div>\n        "
+            template: "\n        <div *ngIf=\"product\">\n            <h2>{{product.name}} details!</h2>\n            <div><label>id: </label>{{product.id}}</div>\n            <div>\n            <label>name: </label>\n            <input [(ngModel)]=\"product.name\" placeholder=\"name\"/>\n            </div>\n        </div>\n        "
         }), 
         __metadata('design:paramtypes', [])
     ], ProductDetailComponent);

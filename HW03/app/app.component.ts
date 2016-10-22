@@ -11,7 +11,6 @@ import { Product } from './product';
         <span class="badge">{{product.id}}</span> {{product.name}}
       </li>
     </ul>
-    <my-product-detail ></my-product-detail>
     <my-product-detail [product]="selectedProduct"></my-product-detail>
   `,
   styles: [`
@@ -66,13 +65,7 @@ import { Product } from './product';
 })
 export class AppComponent {
   title = 'Tour of Products';
-  // product = 'product1';
-  // product: Product = {
-  //   id: 1,
-  //   name: 'Product1'
-  // };
   products = PRODUCTS;
-
   selectedProduct: Product;
   onSelect(product: Product): void {
     this.selectedProduct = product;
